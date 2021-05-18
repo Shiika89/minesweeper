@@ -10,7 +10,7 @@ public class Minesweeper : MonoBehaviour
     [SerializeField] private int m_mineCount = 1;
     [SerializeField] int m_indexNumX = 5;
     [SerializeField] int m_indexNumY = 5;
-    private GameObject[,] cubes;
+    //private GameObject[,] cubes;
 
     // Start is called before the first frame update
     void Start()
@@ -36,18 +36,32 @@ public class Minesweeper : MonoBehaviour
                 var parent = m_gridLayoutGroup.gameObject.transform;
                 cell.transform.SetParent(parent);
                 //cell.transform.position = new Vector3(-4 + i * 2, -3 + x * 2, 0);
-                cubes[i,x] = cell;
+                cubes[i, x] = cell;
             }
         }
 
-        for (var i = 0; i < m_mineCount; i++)
+        if (m_mineCount <= m_indexNumX * m_indexNumY)
         {
-            var r = Random.Range(0, m_indexNumY);
-            var c = Random.Range(0, m_indexNumY);
-            var cell = cubes[r, c];
-            cell.CellState = CellState.Mine;
+            for (var i = 0; i < m_mineCount; i++)
+            {
+                var r = Random.Range(0, m_indexNumX);
+                var c = Random.Range(0, m_indexNumY);
+
+                var cell = cubes[r, c];
+                if (cell.CellState != CellState.Mine)
+                {
+                    cell.CellState = CellState.Mine;
+                }
+                else
+                {
+                    i--;
+                }
+            }
         }
-        
+        else
+        {
+            Debug.Log("Mineの数がセルの配置数より多いので配置できません");
+        }
     }
 
     // Update is called once per frame
