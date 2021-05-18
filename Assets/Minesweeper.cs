@@ -62,6 +62,24 @@ public class Minesweeper : MonoBehaviour
         {
             Debug.Log("Mineの数がセルの配置数より多いので配置できません");
         }
+
+
+        for (int i = 0; i < m_indexNumX; i++)
+        {
+            for (int x = 0; x < m_indexNumY; x++)
+            {
+                var count = 0;
+                var cell = cubes[i, x];
+                if (cell.CellState != CellState.Mine)
+                {
+                    if (cubes[i - 1, x -1].CellState == CellState.Mine || i >= 0 || x >= 0)
+                    {
+                        count++;
+                    }
+                    Debug.Log($"cell[{i}, {x}] = {cell.CellState}");
+                }
+            }
+        }
     }
 
     // Update is called once per frame
