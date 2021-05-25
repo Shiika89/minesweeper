@@ -10,7 +10,7 @@ public class Minesweeper : MonoBehaviour
     [SerializeField] private int m_mineCount = 1;
     [SerializeField] int m_indexNumX = 5;
     [SerializeField] int m_indexNumY = 5;
-    //private GameObject[,] cubes;
+    private Cell[,] cubes;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +26,8 @@ public class Minesweeper : MonoBehaviour
             m_gridLayoutGroup.constraintCount = m_indexNumY;
         }
 
-        //cubes = new GameObject[m_indexNumX, m_indexNumY];
-        var cubes = new Cell[m_indexNumX, m_indexNumY];
+        cubes = new Cell[m_indexNumX, m_indexNumY];
+        //var cubes = new Cell[m_indexNumX, m_indexNumY];
         for (int i = 0; i < m_indexNumX; i++)
         {
             for (int x = 0; x < m_indexNumY; x++)
@@ -51,6 +51,7 @@ public class Minesweeper : MonoBehaviour
                 if (cell.CellState != CellState.Mine)
                 {
                     cell.CellState = CellState.Mine;
+                    AddMine(r, c);
                 }
                 else
                 {
@@ -63,23 +64,68 @@ public class Minesweeper : MonoBehaviour
             Debug.Log("Mineの数がセルの配置数より多いので配置できません");
         }
 
+        //for (int i = 0; i < m_indexNumX; i++)
+        //{
+        //    for (int x = 0; x < m_indexNumY; x++)
+        //    {
+        //        var cell = cubes[i, x];
+        //        if (cell.CellState == CellState.Mine)
+        //        {
+        //            continue;
+        //        }
 
-        for (int i = 0; i < m_indexNumX; i++)
+        //        var count = GetMineCount(i, x);
+        //        cell.CellState = (CellState)count;
+        //    }
+        //}
+    }
+
+    private void AddMine(int r, int c)
+    {
+        var left = c - 1;
+        var right = c + 1;
+        var top = r - 1;
+        var bottom = r + 1;
+
+        if (top >= 0)
         {
-            for (int x = 0; x < m_indexNumY; x++)
-            {
-                var count = 0;
-                var cell = cubes[i, x];
-                if (cell.CellState != CellState.Mine)
-                {
-                    if (cubes[i - 1, x -1].CellState == CellState.Mine || i >= 0 || x >= 0)
-                    {
-                        count++;
-                    }
-                    Debug.Log($"cell[{i}, {x}] = {cell.CellState}");
-                }
-            }
+            if (left >= 0 && cubes[top, left].CellState != CellState.Mine) { cubes[top, left].CellState++; }
+            if (cubes[top, c].CellState != CellState.Mine) { cubes[top, c].CellState++; }
+            if (right < m_indexNumY && cubes[top, right].CellState != CellState.Mine) { cubes[top, right].CellState++; }
         }
+        if (left >= 0 && cubes[r, left].CellState != CellState.Mine) { cubes[r, left].CellState++; }
+        if (right < m_indexNumY && cubes[r, right].CellState != CellState.Mine) { cubes[r, right].CellState++; }
+        if (bottom < m_indexNumX)
+        {
+            if (left >= 0 && cubes[bottom, left].CellState != CellState.Mine) { cubes[bottom, left].CellState++; }
+            if (cubes[bottom, c].CellState != CellState.Mine) { cubes[bottom, c].CellState++; }
+            if (right < m_indexNumY && cubes[bottom, right].CellState != CellState.Mine) { cubes[bottom, right].CellState++; }
+        }
+    }
+
+    private int GetMineCount(int r, int c)
+    {
+        var left = c - 1;
+        var right = c + 1;
+        var top = r - 1;
+        var bottom = r + 1;
+
+	var count = 0;
+        if (top >= 0)
+        {
+            if (left >= 0 && cubes[top, left].CellState == CellState.Mine) { count++; }
+            if (cubes[top, c].CellState == CellState.Mine) { count++; }
+            if (right < m_indexNumY && cubes[top, right].CellState == CellState.Mine) { count++; }
+        }
+        if (left >= 0 && cubes[r, left].CellState == CellState.Mine) { count++; }
+        if (right < m_indexNumY && cubes[r, right].CellState == CellState.Mine) { count++; }
+        if (bottom < m_indexNumX)
+        {
+            if (left >= 0 && cubes[bottom, left].CellState == CellState.Mine) { count++; }
+            if (cubes[bottom, c].CellState == CellState.Mine) { count++; }
+            if (right < m_indexNumY && cubes[bottom, right].CellState == CellState.Mine) { count++; }
+        }
+        return count;
     }
 
     // Update is called once per frame
