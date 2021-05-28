@@ -20,6 +20,7 @@ public class Cell : MonoBehaviour
     [SerializeField] Text m_view = null;
 
     [SerializeField] private CellState m_cellState = CellState.None;
+
     public CellState CellState
     {
         get => m_cellState;

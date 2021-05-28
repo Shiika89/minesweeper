@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Cell.cs" />
     <Compile Include="Assets\Minesweeper.cs" />
+    <Compile Include="Assets\Hide.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
