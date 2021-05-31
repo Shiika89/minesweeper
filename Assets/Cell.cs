@@ -58,7 +58,7 @@ public class Cell : MonoBehaviour
     {
         if (CellState != CellState.Mine)
         {
-            m_button.SetActive(false);
+            //m_button.SetActive(false);
         }
         else if (CellState == CellState.Mine)
         {
@@ -75,7 +75,7 @@ public class Cell : MonoBehaviour
 
         if (top >= 0)
         {
-
+            
         }
     }
 }
