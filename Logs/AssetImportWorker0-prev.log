@@ -1,0 +1,601 @@
+Using pre-set license
+Built from '2021.1/release' branch; Version is '2021.1.4f1 (4cd64a618c1b) revision 5035594'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19042.985; Version 2009; 64bit' Language: 'ja' Physical Memory: 16227 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.1.4f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Unity/Minesweeper
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+51618
+Successfully changed project path to: C:/Unity/Minesweeper
+C:/Unity/Minesweeper
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 73.72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.4f1 (4cd64a618c1b)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.4f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Unity/Minesweeper/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f91)
+    Vendor:   NVIDIA
+    VRAM:     3962 MB
+    Driver:   26.21.14.4223
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.4f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.4f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56704
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001915 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 76.27 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.226 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002974 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.906 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.55 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2667 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.6 MB.
+System memory in use after: 102.8 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 3120.
+Total: 2.309100 ms (FindLiveObjects: 0.330900 ms CreateObjectMapping: 0.180200 ms MarkObjects: 1.726900 ms  DeleteObjects: 0.069200 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cd74101be800f8e9ebb29d2bdc0af68') in 0.062915 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002793 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.850 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.7 MB.
+System memory in use after: 102.9 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3125.
+Total: 1.817300 ms (FindLiveObjects: 0.194900 ms CreateObjectMapping: 0.134400 ms MarkObjects: 1.450400 ms  DeleteObjects: 0.037100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003240 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.49 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.978 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.57 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.7 MB.
+System memory in use after: 102.9 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3128.
+Total: 2.385100 ms (FindLiveObjects: 0.204600 ms CreateObjectMapping: 0.142000 ms MarkObjects: 1.996600 ms  DeleteObjects: 0.040700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 149.637832 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ccbe16b1d8f820b799c9391060344f6') in 0.038220 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.988834 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e559d559784a5a00ecc57b1fb41c9537') in 0.003776 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.999531 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78050e2345575fbeda775bb914646027') in 0.003485 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.661600 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94e2d0f636c9af62dfd9b65670b03d15') in 0.004283 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.632869 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bc7009df94376f4ff2ccb345b563234') in 0.003739 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.461457 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e221ac9211abaf05d138e50a9e62a0cd') in 0.003910 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002816 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.855 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.8 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3131.
+Total: 1.730200 ms (FindLiveObjects: 0.203900 ms CreateObjectMapping: 0.122200 ms MarkObjects: 1.360900 ms  DeleteObjects: 0.042400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002825 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.853 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.42 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.8 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3134.
+Total: 1.827900 ms (FindLiveObjects: 0.195300 ms CreateObjectMapping: 0.130100 ms MarkObjects: 1.466200 ms  DeleteObjects: 0.035600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 312.091025 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '920901ff8163cffdeae3098f8c510083') in 0.031447 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002824 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.832 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.8 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3137.
+Total: 1.787000 ms (FindLiveObjects: 0.199000 ms CreateObjectMapping: 0.126800 ms MarkObjects: 1.420200 ms  DeleteObjects: 0.040300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002782 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.825 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.42 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.8 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3140.
+Total: 1.707200 ms (FindLiveObjects: 0.199600 ms CreateObjectMapping: 0.128200 ms MarkObjects: 1.342300 ms  DeleteObjects: 0.036500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1935.238772 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '188acd777dceef5c10f558528d949601') in 0.045786 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.680877 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9461cc82719f51cd61549f27b678fa2') in 0.003868 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.395378 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa86172f2c6921276439deda497ad999') in 0.003818 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.633496 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8820975af3d2655e39466cf0769a37a5') in 0.005303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.262155 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27f24d9d56a6b8bfd69b58a46cbe80eb') in 0.004620 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.862077 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '755eb25247a047a131b1ced461aac3bc') in 0.004047 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.900383 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2d2ad72247e9e24947b8fd82c71cbdd') in 0.003766 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.913918 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7162e232300db1e453972560c5ebdc9') in 0.003674 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002804 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.847 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.8 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3143.
+Total: 1.788100 ms (FindLiveObjects: 0.208900 ms CreateObjectMapping: 0.133400 ms MarkObjects: 1.400200 ms  DeleteObjects: 0.044700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 98.765551 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10dbad51bbde5bb05e2f2bc4ee30c507') in 0.038359 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.914403 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd36b5de5c87790985163c8d04b027f24') in 0.004128 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002789 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.825 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.8 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3146.
+Total: 1.772200 ms (FindLiveObjects: 0.210500 ms CreateObjectMapping: 0.131900 ms MarkObjects: 1.382900 ms  DeleteObjects: 0.046100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002771 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.832 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.46 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.8 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3149.
+Total: 1.877400 ms (FindLiveObjects: 0.218200 ms CreateObjectMapping: 0.130300 ms MarkObjects: 1.486800 ms  DeleteObjects: 0.041200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002764 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.826 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.8 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3152.
+Total: 1.819200 ms (FindLiveObjects: 0.197900 ms CreateObjectMapping: 0.122400 ms MarkObjects: 1.460600 ms  DeleteObjects: 0.037500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003503 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.835 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.49 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.8 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3155.
+Total: 3.422900 ms (FindLiveObjects: 0.249900 ms CreateObjectMapping: 0.209400 ms MarkObjects: 2.894600 ms  DeleteObjects: 0.067800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002788 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.837 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.42 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.8 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3158.
+Total: 1.838600 ms (FindLiveObjects: 0.200300 ms CreateObjectMapping: 0.127900 ms MarkObjects: 1.475000 ms  DeleteObjects: 0.034800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002816 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.61 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.839 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.0 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3161.
+Total: 2.326800 ms (FindLiveObjects: 0.251100 ms CreateObjectMapping: 0.217700 ms MarkObjects: 1.789300 ms  DeleteObjects: 0.067700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003172 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.855 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.1 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3164.
+Total: 1.930600 ms (FindLiveObjects: 0.242800 ms CreateObjectMapping: 0.142000 ms MarkObjects: 1.504400 ms  DeleteObjects: 0.040500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002970 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.833 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.52 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.1 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3167.
+Total: 2.012900 ms (FindLiveObjects: 0.253700 ms CreateObjectMapping: 0.165800 ms MarkObjects: 1.551800 ms  DeleteObjects: 0.040800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002841 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.818 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.47 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2662 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.1 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3170.
+Total: 1.945300 ms (FindLiveObjects: 0.240800 ms CreateObjectMapping: 0.161900 ms MarkObjects: 1.500600 ms  DeleteObjects: 0.041200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002902 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.840 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2663 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.1 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3174.
+Total: 1.883400 ms (FindLiveObjects: 0.218700 ms CreateObjectMapping: 0.138700 ms MarkObjects: 1.398000 ms  DeleteObjects: 0.126900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1332.768998 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4e30c0ce67b8d8fd87208e9108b82ac') in 0.042659 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002891 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.844 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.49 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2663 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.1 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3177.
+Total: 1.880500 ms (FindLiveObjects: 0.209300 ms CreateObjectMapping: 0.131500 ms MarkObjects: 1.491800 ms  DeleteObjects: 0.047000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 88.073395 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0502625bdaf1af470d827ea0039e3822') in 0.037525 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002846 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.828 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2663 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.1 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3180.
+Total: 1.837900 ms (FindLiveObjects: 0.215100 ms CreateObjectMapping: 0.132500 ms MarkObjects: 1.446800 ms  DeleteObjects: 0.042800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 177.836796 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ba430d30ca53ae55033e6cdcdccad18') in 0.041024 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.821115 seconds.
+  path: Assets/Cell.prefab
+  artifactKey: Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cell.prefab using Guid(82fcd7ed7071f714ca677cfd09571155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8294aa59d0748baf180154f98572c4cc') in 0.004753 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003007 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.820 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2663 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 102.9 MB.
+System memory in use after: 103.1 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3183.
+Total: 1.780100 ms (FindLiveObjects: 0.206100 ms CreateObjectMapping: 0.131400 ms MarkObjects: 1.395400 ms  DeleteObjects: 0.046600 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

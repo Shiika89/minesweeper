@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hide : MonoBehaviour
 {
-    [SerializeField] GameObject m_button;
+    [SerializeField] Button m_button;
 
     // Start is called before the first frame update
     void Start()

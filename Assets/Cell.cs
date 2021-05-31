@@ -18,7 +18,7 @@ public enum CellState
 public class Cell : MonoBehaviour
 {
     [SerializeField] Text m_view = null;
-
+    [SerializeField] GameObject m_button;
     [SerializeField] private CellState m_cellState = CellState.None;
 
     public CellState CellState
@@ -51,6 +51,31 @@ public class Cell : MonoBehaviour
         {
             m_view.text = ((int)m_cellState).ToString();
             m_view.color = Color.blue;
+        }
+    }
+
+    public void OnClickThis()
+    {
+        if (CellState != CellState.Mine)
+        {
+            m_button.SetActive(false);
+        }
+        else if (CellState == CellState.Mine)
+        {
+            m_button.SetActive(false);
+        }
+    }
+
+    void searchCell(int r, int c)
+    {
+        var left = c - 1;
+        var right = c + 1;
+        var top = r - 1;
+        var bottom = r + 1;
+
+        if (top >= 0)
+        {
+
         }
     }
 }

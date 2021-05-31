@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_view: {fileID: 8468406615647841351}
+  m_button: {fileID: 5615846801848868222}
   m_cellState: 0
 --- !u!1 &5615846801848868222
 GameObject:
@@ -292,7 +293,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 937034066358975886}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8831077172707846763}
+        m_TargetAssemblyTypeName: Cell, Assembly-CSharp
+        m_MethodName: OnClickThis
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4580594973330784592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,12 +313,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5615846801848868222}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d3ef002c1b11164899dd7ab8c3eafaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_button: {fileID: 5615846801848868222}
+  m_button: {fileID: 0}
 --- !u!1 &7849414870478355777
 GameObject:
   m_ObjectHideFlags: 0
