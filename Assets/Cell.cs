@@ -24,6 +24,7 @@ public class Cell : MonoBehaviour
     Minesweeper minesweeper;
     private Cell[,] cubes;
     public Vector2Int positionCell;
+    public bool Open;
 
     private void Start()
     {
@@ -64,19 +65,28 @@ public class Cell : MonoBehaviour
             m_view.color = Color.blue;
         }
     }
-
+    public void CellOpen()
+    {
+        m_button.SetActive(false);
+        Open = true;
+    }
     public void OnClickThis()
     {
-        if (CellState != CellState.Mine)
+        if (CellState == CellState.None)
         {
             m_button.SetActive(false);
-            minesweeper.lastOpenCell = this;
-            //minesweeper.OpenCell();
-
+            Open = true;
+            minesweeper.OpenCell(this);
         }
-        else if (CellState == CellState.Mine)
+        else if (CellState != CellState.Mine)
         {
-            //m_button.SetActive(false);
+            m_button.SetActive(false);
+            Open = true;
+        }
+        else
+        {
+            m_button.SetActive(false);
+            Open = true;
         }
     }
 }
