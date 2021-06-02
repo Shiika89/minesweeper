@@ -172,6 +172,7 @@ MonoBehaviour:
   m_view: {fileID: 8468406615647841351}
   m_button: {fileID: 5615846801848868222}
   m_cellState: 0
+  positionCell: {x: 0, y: 0}
 --- !u!1 &5615846801848868222
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,8 +18,19 @@ public enum CellState
 public class Cell : MonoBehaviour
 {
     [SerializeField] Text m_view = null;
-    [SerializeField] GameObject m_button;
+    [SerializeField] public GameObject m_button;
     [SerializeField] private CellState m_cellState = CellState.None;
+    GameObject mine;
+    Minesweeper minesweeper;
+    private Cell[,] cubes;
+    public Vector2Int positionCell;
+
+    private void Start()
+    {
+        mine = GameObject.Find("Minesweeper");
+        minesweeper = mine.GetComponent<Minesweeper>();
+        cubes = new Cell[minesweeper.m_indexNumX,minesweeper.m_indexNumY];
+    }
 
     public CellState CellState
     {
@@ -58,24 +69,14 @@ public class Cell : MonoBehaviour
     {
         if (CellState != CellState.Mine)
         {
-            //m_button.SetActive(false);
+            m_button.SetActive(false);
+            minesweeper.lastOpenCell = this;
+            //minesweeper.OpenCell();
+
         }
         else if (CellState == CellState.Mine)
         {
-            m_button.SetActive(false);
-        }
-    }
-
-    void searchCell(int r, int c)
-    {
-        var left = c - 1;
-        var right = c + 1;
-        var top = r - 1;
-        var bottom = r + 1;
-
-        if (top >= 0)
-        {
-            
+            //m_button.SetActive(false);
         }
     }
 }
