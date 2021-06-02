@@ -12,15 +12,13 @@ public class Minesweeper : MonoBehaviour
     [SerializeField] private int m_mineCount = 1; //Mineの数を好きに変更するための変数
     [SerializeField] public int m_indexNumX = 5; //横に何個セルを設置するかの変数
     [SerializeField] public int m_indexNumY = 5; //縦に何個セルを設置するかの変数
+    [SerializeField] Text m_gameOver;
     private Cell[,] cubes; //セルを格納するための2次元配列の変数
-    //public Cell lastOpenCell;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        //m_cellScript = m_cellPrefab.GetComponent<Cell>();
-
         if (m_indexNumX < m_indexNumY)
         {
             m_gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
@@ -188,5 +186,10 @@ public class Minesweeper : MonoBehaviour
         }
         
 	return list.ToArray();
+    }
+
+    public void GameOver()
+    {
+        m_gameOver.enabled = true;
     }
 }

@@ -22,7 +22,6 @@ public class Cell : MonoBehaviour
     [SerializeField] private CellState m_cellState = CellState.None;
     GameObject mine;
     Minesweeper minesweeper;
-    private Cell[,] cubes;
     public Vector2Int positionCell;
     public bool Open;
 
@@ -30,7 +29,6 @@ public class Cell : MonoBehaviour
     {
         mine = GameObject.Find("Minesweeper");
         minesweeper = mine.GetComponent<Minesweeper>();
-        cubes = new Cell[minesweeper.m_indexNumX,minesweeper.m_indexNumY];
     }
 
     public CellState CellState
@@ -87,6 +85,7 @@ public class Cell : MonoBehaviour
         {
             m_button.SetActive(false);
             Open = true;
+            minesweeper.GameOver();
         }
     }
 }
