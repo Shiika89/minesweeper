@@ -9,15 +9,28 @@ public class SurvivalMinesweeper : MonoBehaviour
     [SerializeField] private SurvivalCell m_cellPrefab = null; //セルのobjectを取得するための変数
     [SerializeField] public GameObject m_gameOver;
     [SerializeField] private GridLayoutGroup m_gridLayoutGroup = null;
-    [SerializeField] private int m_mineCount = 1; //Mineの数を好きに変更するための変数
+    [SerializeField] public int m_mineCount = 1; //Mineの数を好きに変更するための変数
     [SerializeField] public int m_indexNumX = 5; //横に何個セルを設置するかの変数
     [SerializeField] public int m_indexNumY = 5; //縦に何個セルを設置するかの変数
     private SurvivalCell[,] cubes; //セルを格納するための2次元配列の変数
+    public int m_playerHP;
+    public int m_maxPlayerHP = 20;
+    public int m_MineDamage = 10;
+    public int m_defenseDamage = 5;
+    public int m_heel;
+    [SerializeField] GameObject m_hp_object;
+    [SerializeField] GameObject m_mineText_object;
+    Text m_hp;
+    Text m_mineText;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        m_hp = m_hp_object.GetComponent<Text>();
+        m_mineText = m_mineText_object.GetComponent<Text>();
+        m_playerHP = m_maxPlayerHP;
+
         if (m_indexNumX < m_indexNumY)
         {
             m_gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
@@ -69,6 +82,12 @@ public class SurvivalMinesweeper : MonoBehaviour
         {
             Debug.Log("Mineの数がセルの配置数より多いので配置できません");
         }
+    }
+
+    private void Update()
+    {
+        m_hp.text = "残りHP　：" + m_playerHP;
+        m_mineText.text = "残りMIne　：" + m_mineCount;
     }
 
     //Mineから見て周りのセルにカウントを足す
@@ -190,5 +209,10 @@ public class SurvivalMinesweeper : MonoBehaviour
     public void GameOver()
     {
         m_gameOver.SetActive(true);
+    }
+
+    public void Heal()
+    {
+
     }
 }

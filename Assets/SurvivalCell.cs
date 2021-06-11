@@ -67,25 +67,85 @@ public class SurvivalCell : MonoBehaviour
     {
         m_button.SetActive(false);
         Open = true;
+        if (SurvivalCellState != SurvivalCellState.None)
+        {
+            if (m_survivalMinesweeper.m_playerHP < m_survivalMinesweeper.m_maxPlayerHP)
+            {
+                if (m_survivalMinesweeper.m_playerHP + (int)SurvivalCellState > m_survivalMinesweeper.m_maxPlayerHP)
+                {
+                    m_survivalMinesweeper.m_playerHP = m_survivalMinesweeper.m_maxPlayerHP;
+                }
+                else
+                {
+                    m_survivalMinesweeper.m_playerHP += (int)SurvivalCellState;
+                }
+            }
+        }
     }
     public void OnClickThis()
     {
         if (SurvivalCellState == SurvivalCellState.None)
         {
-            m_button.SetActive(false);
-            Open = true;
-            m_survivalMinesweeper.OpenCell(this);
+            if (Input.GetMouseButtonUp(0))
+            {
+                m_button.SetActive(false);
+                Open = true;
+                m_survivalMinesweeper.OpenCell(this);            
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                m_button.SetActive(false);
+                Open = true;
+                m_survivalMinesweeper.OpenCell(this);
+                Debug.Log("Mineじゃない場所で右クリック！、5ダメージ！");
+                m_survivalMinesweeper.m_playerHP -= m_survivalMinesweeper.m_defenseDamage;
+            }
         }
         else if (SurvivalCellState != SurvivalCellState.Mine)
         {
             m_button.SetActive(false);
             Open = true;
+            if (Input.GetMouseButtonUp(0))
+            {
+                if (m_survivalMinesweeper.m_playerHP < m_survivalMinesweeper.m_maxPlayerHP)
+                {
+                    if (m_survivalMinesweeper.m_playerHP + (int)SurvivalCellState > m_survivalMinesweeper.m_maxPlayerHP)
+                    {
+                        m_survivalMinesweeper.m_playerHP = m_survivalMinesweeper.m_maxPlayerHP;
+                    }
+                    else
+                    {
+                        m_survivalMinesweeper.m_playerHP += (int)SurvivalCellState;
+                    }
+                }
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                m_button.SetActive(false);
+                Open = true;
+                Debug.Log("Mineじゃない場所で右クリック！、5ダメージ！");
+                m_survivalMinesweeper.m_playerHP -= m_survivalMinesweeper.m_defenseDamage;
+            }
         }
         else
         {
             m_button.SetActive(false);
             Open = true;
-            m_survivalMinesweeper.GameOver();
+            m_survivalMinesweeper.m_mineCount--;
+            if (Input.GetMouseButtonUp(0))
+            {
+                Debug.Log("Mineを踏んでしまった！、10ダメージ！");
+                m_survivalMinesweeper.m_playerHP -= m_survivalMinesweeper.m_MineDamage;
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                Debug.Log("Mineを看破してダメージを軽減した！、5ダメージ！");
+                m_survivalMinesweeper.m_playerHP -= m_survivalMinesweeper.m_defenseDamage;
+            }
+            if (m_survivalMinesweeper.m_playerHP <= 0)
+            {
+                m_survivalMinesweeper.GameOver();
+            }
         }
     }
 }
