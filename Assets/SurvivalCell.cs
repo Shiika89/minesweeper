@@ -20,6 +20,8 @@ public class SurvivalCell : MonoBehaviour
     [SerializeField] Text m_view = null;
     [SerializeField] public GameObject m_button;
     [SerializeField] private SurvivalCellState m_cellState = SurvivalCellState.None;
+    GameObject m_player;
+    Animator m_anim;
     GameObject m_survivalMine;
     SurvivalMinesweeper m_survivalMinesweeper;
     public Vector2Int positionCell;
@@ -29,6 +31,8 @@ public class SurvivalCell : MonoBehaviour
     {
         m_survivalMine = GameObject.Find("SurvivalMinesweeper");
         m_survivalMinesweeper = m_survivalMine.GetComponent<SurvivalMinesweeper>();
+        m_player = GameObject.Find("Player");
+        m_anim = m_player.GetComponent<Animator>();
     }
 
     public SurvivalCellState SurvivalCellState
@@ -86,6 +90,8 @@ public class SurvivalCell : MonoBehaviour
     {
         if (SurvivalCellState == SurvivalCellState.None)
         {
+            m_anim.SetTrigger("Attack");
+
             if (Input.GetMouseButtonUp(0))
             {
                 m_button.SetActive(false);
@@ -98,13 +104,20 @@ public class SurvivalCell : MonoBehaviour
                 Open = true;
                 m_survivalMinesweeper.OpenCell(this);
                 Debug.Log("Mineじゃない場所で右クリック！、5ダメージ！");
+                m_anim.SetTrigger("DefenseDamage");
                 m_survivalMinesweeper.m_playerHP -= m_survivalMinesweeper.m_defenseDamage;
+                if (m_survivalMinesweeper.m_playerHP <= 0)
+                {
+                    m_anim.SetTrigger("Die");
+                    m_survivalMinesweeper.GameOver();
+                }
             }
         }
         else if (SurvivalCellState != SurvivalCellState.Mine)
         {
             m_button.SetActive(false);
             Open = true;
+            m_anim.SetTrigger("Attack");
             if (Input.GetMouseButtonUp(0))
             {
                 if (m_survivalMinesweeper.m_playerHP < m_survivalMinesweeper.m_maxPlayerHP)
@@ -124,27 +137,42 @@ public class SurvivalCell : MonoBehaviour
                 m_button.SetActive(false);
                 Open = true;
                 Debug.Log("Mineじゃない場所で右クリック！、5ダメージ！");
+                m_anim.SetTrigger("DefenseDamage");
                 m_survivalMinesweeper.m_playerHP -= m_survivalMinesweeper.m_defenseDamage;
+                if (m_survivalMinesweeper.m_playerHP <= 0)
+                {
+                    m_anim.SetTrigger("Die");
+                    m_survivalMinesweeper.GameOver();
+                }
             }
         }
         else
         {
             m_button.SetActive(false);
             Open = true;
+            m_anim.SetTrigger("Attack");
+            
             m_survivalMinesweeper.m_mineCount--;
             if (Input.GetMouseButtonUp(0))
             {
+                m_anim.SetTrigger("Damage");
                 Debug.Log("Mineを踏んでしまった！、10ダメージ！");
                 m_survivalMinesweeper.m_playerHP -= m_survivalMinesweeper.m_MineDamage;
             }
             if (Input.GetMouseButtonUp(1))
             {
+                m_anim.SetTrigger("DefenseDamage");
                 Debug.Log("Mineを看破してダメージを軽減した！、5ダメージ！");
                 m_survivalMinesweeper.m_playerHP -= m_survivalMinesweeper.m_defenseDamage;
             }
             if (m_survivalMinesweeper.m_playerHP <= 0)
             {
+                m_anim.SetTrigger("Die");
                 m_survivalMinesweeper.GameOver();
+            }
+            if (m_survivalMinesweeper.m_mineCount == 0)
+            {
+                m_survivalMinesweeper.GameClear();
             }
         }
     }

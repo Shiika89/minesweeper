@@ -7,12 +7,13 @@ public class SurvivalMinesweeper : MonoBehaviour
 {
 
     [SerializeField] private SurvivalCell m_cellPrefab = null; //セルのobjectを取得するための変数
-    [SerializeField] public GameObject m_gameOver;
+    [SerializeField] GameObject m_gameOver;
+    [SerializeField] GameObject m_gameClear;
     [SerializeField] private GridLayoutGroup m_gridLayoutGroup = null;
     [SerializeField] public int m_mineCount = 1; //Mineの数を好きに変更するための変数
     [SerializeField] public int m_indexNumX = 5; //横に何個セルを設置するかの変数
     [SerializeField] public int m_indexNumY = 5; //縦に何個セルを設置するかの変数
-    private SurvivalCell[,] cubes; //セルを格納するための2次元配列の変数
+    private SurvivalCell[,] cubes; //セルを格納するための2次元配列の変数    
     public int m_playerHP;
     public int m_maxPlayerHP = 20;
     public int m_MineDamage = 10;
@@ -209,6 +210,11 @@ public class SurvivalMinesweeper : MonoBehaviour
     public void GameOver()
     {
         m_gameOver.SetActive(true);
+    }
+
+    public void GameClear()
+    {
+        m_gameClear.SetActive(true);
     }
 
     public void Heal()
