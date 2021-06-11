@@ -153,7 +153,7 @@ public class Minesweeper : MonoBehaviour
         
 	if (top >= 0)
         {
-            if (left >= 0 && cubes[r,c].CellState == CellState.None) 
+            if (left >= 0) 
             { 
                 list.Add(cubes[top, left]); 
             }

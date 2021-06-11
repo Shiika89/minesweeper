@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minesweeper.unity
     guid: a7abede8796946046a26e3a408cb71d4
+  - enabled: 1
+    path: Assets/Scenes/SurvivalMinesweeper.unity
+    guid: bbbb2702fa870fd44b83ac5706fb49af
   m_configObjects: {}
