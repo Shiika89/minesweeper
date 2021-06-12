@@ -27,6 +27,7 @@ public class SurvivalMinesweeper : MonoBehaviour
     Text m_hp;
     Text m_mineText;
     Text m_stage;
+    public bool m_gameStop = false;
 
 
     // Start is called before the first frame update
@@ -165,11 +166,13 @@ public class SurvivalMinesweeper : MonoBehaviour
 
     public void GameOver()
     {
+        m_gameStop = true;
         m_gameOver.SetActive(true);
     }
 
     public void NextStage()
     {
+        m_gameStop = true;
         m_stageClear.SetActive(true);
     }
 
@@ -195,6 +198,8 @@ public class SurvivalMinesweeper : MonoBehaviour
 
     void GameStart()
     {
+        m_gameStop = false;
+
         m_mineCount = m_maxMineCount;
 
         if (m_indexNumX < m_indexNumY)

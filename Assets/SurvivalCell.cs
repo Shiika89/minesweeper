@@ -86,7 +86,7 @@ public class SurvivalCell : EventObject
             }
         }
     }
-    public void OnClickThis()
+    void Conditions()
     {
         if (SurvivalCellState == SurvivalCellState.None)
         {
@@ -174,6 +174,14 @@ public class SurvivalCell : EventObject
             {
                 m_survivalMinesweeper.NextStage();
             }
+        }
+    }
+
+    public void OnClickThis()
+    {
+        if (m_survivalMinesweeper.m_gameStop == false)
+        {
+            Conditions();
         }
     }
 
