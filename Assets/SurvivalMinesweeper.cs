@@ -10,10 +10,11 @@ public class SurvivalMinesweeper : MonoBehaviour
     [SerializeField] GameObject m_gameOver;
     [SerializeField] GameObject m_gameClear;
     [SerializeField] private GridLayoutGroup m_gridLayoutGroup = null;
-    [SerializeField] public int m_mineCount = 1; //Mineの数を好きに変更するための変数
+    [SerializeField] public int m_maxMineCount = 1; //Mineの数を好きに変更するための変数
     [SerializeField] public int m_indexNumX = 5; //横に何個セルを設置するかの変数
     [SerializeField] public int m_indexNumY = 5; //縦に何個セルを設置するかの変数
-    private SurvivalCell[,] cubes; //セルを格納するための2次元配列の変数    
+    private SurvivalCell[,] cubes; //セルを格納するための2次元配列の変数
+    public int m_mineCount;
     public int m_playerHP;
     public int m_maxPlayerHP = 20;
     public int m_MineDamage = 10;
@@ -32,63 +33,13 @@ public class SurvivalMinesweeper : MonoBehaviour
         m_mineText = m_mineText_object.GetComponent<Text>();
         m_playerHP = m_maxPlayerHP;
 
-        if (m_indexNumX < m_indexNumY)
-        {
-            m_gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
-            m_gridLayoutGroup.constraintCount = m_indexNumX;
-        }
-        else
-        {
-            m_gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedRowCount;
-            m_gridLayoutGroup.constraintCount = m_indexNumY;
-        }
-
-        //2次元配列の大きさを横と縦の大きさに設定
-        cubes = new SurvivalCell[m_indexNumX, m_indexNumY];
-
-        //設定した配列分のセルを生成
-        for (int i = 0; i < m_indexNumX; i++)
-        {
-            for (int x = 0; x < m_indexNumY; x++)
-            {
-                var cell = Instantiate(m_cellPrefab);
-                cell.positionCell = new Vector2Int(i, x); //生成したセルのpositionを記憶
-                var parent = m_gridLayoutGroup.gameObject.transform;
-                cell.transform.SetParent(parent); //生成場所を指定
-                cubes[i, x] = cell;
-            }
-        }
-
-        //ランダムにMineを生成
-        if (m_mineCount <= m_indexNumX * m_indexNumY) //Mineの数がセルより多ければ生成不可能
-        {
-            for (var i = 0; i < m_mineCount; i++)
-            {
-                var r = Random.Range(0, m_indexNumX);
-                var c = Random.Range(0, m_indexNumY);
-
-                var cell = cubes[r, c];
-                if (cell.SurvivalCellState != SurvivalCellState.Mine)
-                {
-                    cell.SurvivalCellState = SurvivalCellState.Mine; //選ばれた場所にMineがなければ生成
-                    AddMine(r, c); //生成したMineの周りにカウントを追加
-                }
-                else
-                {
-                    i--; //Mineがあった場合はやり直し
-                }
-            }
-        }
-        else
-        {
-            Debug.Log("Mineの数がセルの配置数より多いので配置できません");
-        }
+        GameStart();
     }
 
     private void Update()
     {
-        m_hp.text = "残りHP　：" + m_playerHP;
-        m_mineText.text = "残りMIne　：" + m_mineCount;
+        m_hp.text = "残りHP　：" + m_playerHP + "/" + m_maxPlayerHP;
+        m_mineText.text = "残りMIne　：" + m_mineCount + "/" + m_maxMineCount;
     }
 
     //Mineから見て周りのセルにカウントを足す
@@ -212,13 +163,74 @@ public class SurvivalMinesweeper : MonoBehaviour
         m_gameOver.SetActive(true);
     }
 
-    public void GameClear()
+    public void StageClear()
     {
-        m_gameClear.SetActive(true);
+        //m_gameClear.SetActive(true);
+        EventManager.StageClear();
+        m_maxMineCount += 2;
+        m_maxPlayerHP += 20;
+        if (m_indexNumX < 12 && m_indexNumY < 12)
+        {
+            m_indexNumX++;
+            m_indexNumY++;
+        }
+        GameStart();
     }
 
-    public void Heal()
+    void GameStart()
     {
+        m_mineCount = m_maxMineCount;
 
+        if (m_indexNumX < m_indexNumY)
+        {
+            m_gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+            m_gridLayoutGroup.constraintCount = m_indexNumX;
+        }
+        else
+        {
+            m_gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedRowCount;
+            m_gridLayoutGroup.constraintCount = m_indexNumY;
+        }
+
+        //2次元配列の大きさを横と縦の大きさに設定
+        cubes = new SurvivalCell[m_indexNumX, m_indexNumY];
+
+        //設定した配列分のセルを生成
+        for (int i = 0; i < m_indexNumX; i++)
+        {
+            for (int x = 0; x < m_indexNumY; x++)
+            {
+                var cell = Instantiate(m_cellPrefab);
+                cell.positionCell = new Vector2Int(i, x); //生成したセルのpositionを記憶
+                var parent = m_gridLayoutGroup.gameObject.transform;
+                cell.transform.SetParent(parent); //生成場所を指定
+                cubes[i, x] = cell;
+            }
+        }
+
+        //ランダムにMineを生成
+        if (m_maxMineCount <= m_indexNumX * m_indexNumY) //Mineの数がセルより多ければ生成不可能
+        {
+            for (var i = 0; i < m_maxMineCount; i++)
+            {
+                var r = Random.Range(0, m_indexNumX);
+                var c = Random.Range(0, m_indexNumY);
+
+                var cell = cubes[r, c];
+                if (cell.SurvivalCellState != SurvivalCellState.Mine)
+                {
+                    cell.SurvivalCellState = SurvivalCellState.Mine; //選ばれた場所にMineがなければ生成
+                    AddMine(r, c); //生成したMineの周りにカウントを追加
+                }
+                else
+                {
+                    i--; //Mineがあった場合はやり直し
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("Mineの数がセルの配置数より多いので配置できません");
+        }
     }
 }

@@ -15,7 +15,7 @@ public enum SurvivalCellState
 
     Mine = -1,
 }
-public class SurvivalCell : MonoBehaviour
+public class SurvivalCell : EventObject
 {
     [SerializeField] Text m_view = null;
     [SerializeField] public GameObject m_button;
@@ -172,8 +172,13 @@ public class SurvivalCell : MonoBehaviour
             }
             if (m_survivalMinesweeper.m_mineCount == 0)
             {
-                m_survivalMinesweeper.GameClear();
+                m_survivalMinesweeper.StageClear();
             }
         }
+    }
+
+    public override void StageClear()
+    {
+        Destroy(this.gameObject);
     }
 }

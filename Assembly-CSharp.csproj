@@ -56,14 +56,16 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\SurvivalCell.cs" />
     <Compile Include="Assets\Scripts\Hide.cs" />
     <Compile Include="Assets\Scripts\GameStart.cs" />
     <Compile Include="Assets\Scripts\Cell.cs" />
+    <Compile Include="Assets\SurvivalGameOver.cs" />
+    <Compile Include="Assets\SurvivalMinesweeper.cs" />
     <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\Scripts\Minesweeper.cs" />
-    <Compile Include="Assets\SurvivalMinesweeper.cs" />
-    <Compile Include="Assets\SurvivalCell.cs" />
-    <Compile Include="Assets\SurvivalGameOver.cs" />
+    <Compile Include="Assets\Scripts\EventManager.cs" />
+    <Compile Include="Assets\Scripts\EventObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
