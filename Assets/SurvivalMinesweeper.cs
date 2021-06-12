@@ -8,7 +8,7 @@ public class SurvivalMinesweeper : MonoBehaviour
 
     [SerializeField] private SurvivalCell m_cellPrefab = null; //セルのobjectを取得するための変数
     [SerializeField] GameObject m_gameOver;
-    [SerializeField] GameObject m_gameClear;
+    [SerializeField] GameObject m_stageClear;
     [SerializeField] private GridLayoutGroup m_gridLayoutGroup = null;
     [SerializeField] public int m_maxMineCount = 1; //Mineの数を好きに変更するための変数
     [SerializeField] public int m_indexNumX = 5; //横に何個セルを設置するかの変数
@@ -20,10 +20,13 @@ public class SurvivalMinesweeper : MonoBehaviour
     public int m_MineDamage = 10;
     public int m_defenseDamage = 5;
     public int m_heel;
+    int m_stageCount = 1;
     [SerializeField] GameObject m_hp_object;
     [SerializeField] GameObject m_mineText_object;
+    [SerializeField] GameObject m_stage_object;
     Text m_hp;
     Text m_mineText;
+    Text m_stage;
 
 
     // Start is called before the first frame update
@@ -31,6 +34,7 @@ public class SurvivalMinesweeper : MonoBehaviour
     {
         m_hp = m_hp_object.GetComponent<Text>();
         m_mineText = m_mineText_object.GetComponent<Text>();
+        m_stage = m_stage_object.GetComponent<Text>();
         m_playerHP = m_maxPlayerHP;
 
         GameStart();
@@ -39,7 +43,8 @@ public class SurvivalMinesweeper : MonoBehaviour
     private void Update()
     {
         m_hp.text = "残りHP　：" + m_playerHP + "/" + m_maxPlayerHP;
-        m_mineText.text = "残りMIne　：" + m_mineCount + "/" + m_maxMineCount;
+        m_mineText.text = "残りMINE　：" + m_mineCount + "/" + m_maxMineCount;
+        m_stage.text = "ステージ　" + m_stageCount;
     }
 
     //Mineから見て周りのセルにカウントを足す
@@ -163,16 +168,27 @@ public class SurvivalMinesweeper : MonoBehaviour
         m_gameOver.SetActive(true);
     }
 
+    public void NextStage()
+    {
+        m_stageClear.SetActive(true);
+    }
+
     public void StageClear()
     {
-        //m_gameClear.SetActive(true);
+        m_stageClear.SetActive(false);
         EventManager.StageClear();
-        m_maxMineCount += 2;
-        m_maxPlayerHP += 20;
-        if (m_indexNumX < 12 && m_indexNumY < 12)
+        m_stageCount += 1;
+        if (m_indexNumX < 10 && m_indexNumY < 10)
         {
             m_indexNumX++;
             m_indexNumY++;
+            m_maxMineCount += 4;
+            m_maxPlayerHP += 20;
+            m_playerHP += 20;
+        }
+        else
+        {
+            m_maxMineCount += 2;
         }
         GameStart();
     }

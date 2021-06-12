@@ -172,7 +172,7 @@ public class SurvivalCell : EventObject
             }
             if (m_survivalMinesweeper.m_mineCount == 0)
             {
-                m_survivalMinesweeper.StageClear();
+                m_survivalMinesweeper.NextStage();
             }
         }
     }
