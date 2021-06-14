@@ -71,6 +71,7 @@ public class SurvivalCell : EventObject
     {
         m_button.SetActive(false);
         Open = true;
+        m_survivalMinesweeper.m_healCount += (int)SurvivalCellState;
         if (SurvivalCellState != SurvivalCellState.None)
         {
             if (m_survivalMinesweeper.m_playerHP < m_survivalMinesweeper.m_maxPlayerHP)
@@ -96,12 +97,14 @@ public class SurvivalCell : EventObject
             {
                 m_button.SetActive(false);
                 Open = true;
-                m_survivalMinesweeper.OpenCell(this);            
+                m_survivalMinesweeper.OpenCell(this);
+                m_survivalMinesweeper.Heal();
             }
             if (Input.GetMouseButtonUp(1))
             {
                 m_button.SetActive(false);
                 Open = true;
+                m_survivalMinesweeper.Defense();
                 m_survivalMinesweeper.OpenCell(this);
                 Debug.Log("Mineじゃない場所で右クリック！、5ダメージ！");
                 m_anim.SetTrigger("DefenseDamage");
@@ -124,6 +127,8 @@ public class SurvivalCell : EventObject
             m_anim.SetTrigger("Attack");
             if (Input.GetMouseButtonUp(0))
             {
+                m_survivalMinesweeper.m_healCount += (int)SurvivalCellState;
+                m_survivalMinesweeper.Heal();
                 if (m_survivalMinesweeper.m_playerHP < m_survivalMinesweeper.m_maxPlayerHP)
                 {
                     if (m_survivalMinesweeper.m_playerHP + (int)SurvivalCellState > m_survivalMinesweeper.m_maxPlayerHP)
@@ -140,6 +145,7 @@ public class SurvivalCell : EventObject
             {
                 m_button.SetActive(false);
                 Open = true;
+                m_survivalMinesweeper.Defense();
                 Debug.Log("Mineじゃない場所で右クリック！、5ダメージ！");
                 m_anim.SetTrigger("DefenseDamage");
                 m_survivalMinesweeper.m_playerHP -= m_survivalMinesweeper.m_defenseDamage;
@@ -164,11 +170,13 @@ public class SurvivalCell : EventObject
             if (Input.GetMouseButtonUp(0))
             {
                 m_anim.SetTrigger("Damage");
-                Debug.Log("Mineを踏んでしまった！、10ダメージ！");
+                m_survivalMinesweeper.Damage();
+                Debug.Log("Mineを踏んでしまった！、20ダメージ！");
                 m_survivalMinesweeper.m_playerHP -= m_survivalMinesweeper.m_MineDamage;
             }
             if (Input.GetMouseButtonUp(1))
             {
+                m_survivalMinesweeper.Defense();
                 m_anim.SetTrigger("DefenseDamage");
                 Debug.Log("Mineを看破してダメージを軽減した！、5ダメージ！");
                 m_survivalMinesweeper.m_playerHP -= m_survivalMinesweeper.m_defenseDamage;

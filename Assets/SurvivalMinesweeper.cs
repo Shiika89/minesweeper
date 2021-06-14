@@ -20,16 +20,23 @@ public class SurvivalMinesweeper : MonoBehaviour
     public int m_MineDamage = 10;
     public int m_defenseDamage = 5;
     public int m_heel;
+    public int m_healCount;
     public bool m_invincible;
     int m_stageCount = 1;
     [SerializeField] GameObject m_hp_object;
     [SerializeField] GameObject m_mineText_object;
     [SerializeField] GameObject m_stage_object;
     [SerializeField] GameObject m_clear_object;
+    [SerializeField] GameObject m_damage;
+    [SerializeField] GameObject m_defense;
+    [SerializeField] GameObject m_heal;
     Text m_hp;
     Text m_mineText;
     Text m_stage;
     Text m_clearText;
+    Text m_damageText;
+    Text m_defenseText;
+    Text m_healText;
     public bool m_gameStop = false;
 
 
@@ -269,5 +276,34 @@ public class SurvivalMinesweeper : MonoBehaviour
         {
             Debug.Log("Mineの数がセルの配置数より多いので配置できません");
         }
+    }
+
+    public void Damage()
+    {
+        m_damageText = m_damage.GetComponent<Text>();
+        m_damageText.text = "-20";
+        StartCoroutine(Second(m_damage, 1f));
+    }
+
+    public void Defense()
+    {
+        m_defenseText = m_defense.GetComponent<Text>();
+        m_defenseText.text = "-5";
+        StartCoroutine(Second(m_defense, 1f));
+    }
+
+    public void Heal()
+    {
+        m_healText = m_heal.GetComponent<Text>();
+        m_healText.text = "+" + m_healCount;
+        m_healCount = 0;
+        StartCoroutine(Second(m_heal, 1f));
+    }
+
+    IEnumerator Second(GameObject obj, float sec)
+    {
+        obj.SetActive(true);
+        yield return new WaitForSeconds(sec);
+        obj.SetActive(false);
     }
 }
