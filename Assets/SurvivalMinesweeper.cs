@@ -24,9 +24,11 @@ public class SurvivalMinesweeper : MonoBehaviour
     [SerializeField] GameObject m_hp_object;
     [SerializeField] GameObject m_mineText_object;
     [SerializeField] GameObject m_stage_object;
+    [SerializeField] GameObject m_clear_object;
     Text m_hp;
     Text m_mineText;
     Text m_stage;
+    Text m_clearText;
     public bool m_gameStop = false;
 
 
@@ -36,6 +38,7 @@ public class SurvivalMinesweeper : MonoBehaviour
         m_hp = m_hp_object.GetComponent<Text>();
         m_mineText = m_mineText_object.GetComponent<Text>();
         m_stage = m_stage_object.GetComponent<Text>();
+        m_clearText = m_clear_object.GetComponent<Text>();
         m_playerHP = m_maxPlayerHP;
 
         GameStart();
@@ -46,6 +49,17 @@ public class SurvivalMinesweeper : MonoBehaviour
         m_hp.text = "残りHP　：" + m_playerHP + "/" + m_maxPlayerHP;
         m_mineText.text = "残りMINE　：" + m_mineCount + "/" + m_maxMineCount;
         m_stage.text = "ステージ　" + m_stageCount;
+        if (m_stageCount < 4)
+        {
+            m_clearText.text = "STAGE　" + m_indexNumX + "×" + m_indexNumY + "→" + (m_indexNumX + 1) + "×" + (m_indexNumY + 1) + "\n" +
+                           "MINE　" + m_maxMineCount + "→" + (m_maxMineCount + 4) + "\n" +
+                           "HP　" + m_playerHP + "/" + m_maxPlayerHP + "→" + (m_playerHP + 20) + "/" + (m_maxPlayerHP + 20);
+        }
+        else
+        {
+            m_clearText.text = "MINE　" + m_maxMineCount + "→" + (m_maxMineCount + 2) + "\n" +
+                               "HP　" + m_playerHP + "/" + m_maxPlayerHP;
+        }
     }
 
     //Mineから見て周りのセルにカウントを足す
@@ -173,6 +187,7 @@ public class SurvivalMinesweeper : MonoBehaviour
     public void NextStage()
     {
         m_gameStop = true;
+        EventManager.StageClear();
         m_stageClear.SetActive(true);
     }
 

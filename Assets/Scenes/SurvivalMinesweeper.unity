@@ -818,7 +818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -249, y: 56}
+  m_AnchoredPosition: {x: -241, y: 61}
   m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &893816367
@@ -911,6 +911,7 @@ MonoBehaviour:
   m_hp_object: {fileID: 44284703}
   m_mineText_object: {fileID: 420522114}
   m_stage_object: {fileID: 1593369119}
+  m_gameStop: 0
 --- !u!1 &901241286
 GameObject:
   m_ObjectHideFlags: 0
