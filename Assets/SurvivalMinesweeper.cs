@@ -20,6 +20,7 @@ public class SurvivalMinesweeper : MonoBehaviour
     public int m_MineDamage = 10;
     public int m_defenseDamage = 5;
     public int m_heel;
+    public bool m_invincible;
     int m_stageCount = 1;
     [SerializeField] GameObject m_hp_object;
     [SerializeField] GameObject m_mineText_object;
@@ -49,7 +50,7 @@ public class SurvivalMinesweeper : MonoBehaviour
         m_hp.text = "残りHP　：" + m_playerHP + "/" + m_maxPlayerHP;
         m_mineText.text = "残りMINE　：" + m_mineCount + "/" + m_maxMineCount;
         m_stage.text = "ステージ　" + m_stageCount;
-        if (m_stageCount < 4)
+        if (m_stageCount < 3)
         {
             m_clearText.text = "STAGE　" + m_indexNumX + "×" + m_indexNumY + "→" + (m_indexNumX + 1) + "×" + (m_indexNumY + 1) + "\n" +
                            "MINE　" + m_maxMineCount + "→" + (m_maxMineCount + 4) + "\n" +

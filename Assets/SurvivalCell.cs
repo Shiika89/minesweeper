@@ -112,6 +112,10 @@ public class SurvivalCell : EventObject
                     m_survivalMinesweeper.GameOver();
                 }
             }
+            if (m_survivalMinesweeper.m_invincible == true)
+            {
+                m_survivalMinesweeper.m_playerHP += 50;
+            }
         }
         else if (SurvivalCellState != SurvivalCellState.Mine)
         {
@@ -144,6 +148,10 @@ public class SurvivalCell : EventObject
                     m_anim.SetTrigger("Die");
                     m_survivalMinesweeper.GameOver();
                 }
+                if (m_survivalMinesweeper.m_invincible == true)
+                {
+                    m_survivalMinesweeper.m_playerHP += 50;
+                }
             }
         }
         else
@@ -164,6 +172,10 @@ public class SurvivalCell : EventObject
                 m_anim.SetTrigger("DefenseDamage");
                 Debug.Log("Mineを看破してダメージを軽減した！、5ダメージ！");
                 m_survivalMinesweeper.m_playerHP -= m_survivalMinesweeper.m_defenseDamage;
+            }
+            if (m_survivalMinesweeper.m_invincible == true)
+            {
+                m_survivalMinesweeper.m_playerHP += 50;
             }
             if (m_survivalMinesweeper.m_playerHP <= 0)
             {
