@@ -995,7 +995,7 @@ MonoBehaviour:
   m_gameOver: {fileID: 785300750}
   m_stageClear: {fileID: 211018424}
   m_gridLayoutGroup: {fileID: 893816367}
-  m_maxMineCount: 1
+  m_maxMineCount: 10
   m_indexNumX: 8
   m_indexNumY: 8
   m_mineCount: 4
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_MineDamage: 20
   m_defenseDamage: 5
   m_heel: 0
-  m_invincible: 1
+  m_invincible: 0
   m_hp_object: {fileID: 44284703}
   m_mineText_object: {fileID: 420522114}
   m_stage_object: {fileID: 1593369119}

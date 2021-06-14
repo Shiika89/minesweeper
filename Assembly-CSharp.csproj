@@ -66,6 +66,9 @@
     <Compile Include="Assets\SurvivalMinesweeper.cs" />
     <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\Scripts\Minesweeper.cs" />
+    <Compile Include="Assets\Rule.cs" />
+    <Compile Include="Assets\SMS_GameStart.cs" />
+    <Compile Include="Assets\TiTle.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
