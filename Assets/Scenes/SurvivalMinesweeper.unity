@@ -1285,6 +1285,7 @@ MonoBehaviour:
   m_maxMineCount: 10
   m_indexNumX: 8
   m_indexNumY: 8
+  m_trans: 0
   m_mineCount: 4
   m_playerHP: 20
   m_maxPlayerHP: 50

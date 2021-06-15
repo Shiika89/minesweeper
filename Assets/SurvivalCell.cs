@@ -20,6 +20,7 @@ public class SurvivalCell : EventObject
     [SerializeField] Text m_view = null;
     [SerializeField] public GameObject m_button;
     [SerializeField] private SurvivalCellState m_cellState = SurvivalCellState.None;
+    Image m_buttonImage;
     GameObject m_player;
     Animator m_anim;
     GameObject m_survivalMine;
@@ -33,6 +34,11 @@ public class SurvivalCell : EventObject
         m_survivalMinesweeper = m_survivalMine.GetComponent<SurvivalMinesweeper>();
         m_player = GameObject.Find("Player");
         m_anim = m_player.GetComponent<Animator>();
+        m_buttonImage = m_button.GetComponent<Image>();
+        if (m_survivalMinesweeper.m_trans == true)
+        {
+            m_buttonImage.color = new Color(0, 0, 0, 0.5f);
+        }
     }
 
     public SurvivalCellState SurvivalCellState

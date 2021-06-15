@@ -13,6 +13,7 @@ public class SurvivalMinesweeper : MonoBehaviour
     [SerializeField] public int m_maxMineCount = 1; //Mineの数を好きに変更するための変数
     [SerializeField] public int m_indexNumX = 5; //横に何個セルを設置するかの変数
     [SerializeField] public int m_indexNumY = 5; //縦に何個セルを設置するかの変数
+    [SerializeField] public bool m_trans = false;
     private SurvivalCell[,] cubes; //セルを格納するための2次元配列の変数
     public int m_mineCount;
     public int m_playerHP;
