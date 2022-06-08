@@ -15,7 +15,7 @@ public class SurvivalMinesweeper : MonoBehaviour
     [SerializeField] public int m_indexNumY = 5; //c‚É‰½ŒÂƒZƒ‹‚ğİ’u‚·‚é‚©‚Ì•Ï”
     [SerializeField] public bool m_trans = false;
     private SurvivalCell[,] cubes; //ƒZƒ‹‚ğŠi”[‚·‚é‚½‚ß‚Ì2ŸŒ³”z—ñ‚Ì•Ï”
-    public int m_mineCount;
+    public int m_mineCount { get; set; }
     public int m_playerHP;
     public int m_maxPlayerHP = 20;
     public int m_MineDamage = 10;
